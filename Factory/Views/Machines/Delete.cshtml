@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+@model Factory.Models.Machine
+
+<h3>Are you sure you want to delete this machine from the database?</h3>
+
+<strong>@Html.DisplayName("Name"):</strong> @Html.DisplayFor(model => model.MachineName)
+@using (Html.BeginForm())
+{
+  <br>
+  <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+}
+<br>
+<p>@Html.ActionLink("Cancel", "Details", null, new {id = Model.MachineId}, new {@class="btn btn-primary btn-sm"})</p>
