@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+@model Factory.Models.Engineer
+
+<h2>Edit</h2>
+
+<h4>Edit this Engineer: @Html.DisplayFor(model => model.EngineerName)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.Label("Engineer Name:")
+  <br>
+  @Html.EditorFor(model => model.EngineerName)
+  <br><br>
+  @Html.Label("Phone Number:")
+  <br>
+  @Html.EditorFor(model => model.EngineerPhoneNumber)
+  <br><br>
+  @Html.Label("Hire Date:")
+  <br>
+  @Html.EditorFor(model => model.EngineerHireDate)
+
+  <input type="submit" value="Save" class="btn btn-success btn-sm" />
+}
+<br>
+<p>@Html.ActionLink("Cancel", "Details", null, new {id = Model.EngineerId}, new {@class="btn btn-primary btn-sm"})</p>
