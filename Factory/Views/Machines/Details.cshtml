@@ -9,6 +9,7 @@
 
 <h5><strong>@Html.DisplayName("Description"):</strong> @Html.DisplayFor(model => model.MachineDescription)</h5>
 
+<h5><strong>@Html.DisplayName("Install Date"):</strong> @Html.DisplayFor(model => model.MachineInstallDate)</h5>
 <br>
 
 @if(Model.Engineers.Count == 0)
@@ -17,22 +18,40 @@
 }
 else
 {
-  <h5>Engineers for this machine:</h5>
+  <h5>Engineers that work on this machine:</h5>
   <ul>
-  @foreach(var join in Model.Engineers)
-  {
-    <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</li>
-    @using (Html.BeginForm("DeleteEngineer", "Machines"))
+  <div class="row">
+    
+    @foreach(var join in Model.Engineers)
     {
-      @Html.Hidden("MachineId", @join.MachineId)
-      @Html.Hidden("joinId", @join.MachineEngineerId)
-      <input type="submit" value="Delete" class="btn btn-warning btn-xs" />
+      <div class="col-sm-2">
+        <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</li>
+      </div>
+      
+      <div class="col-ms-2">
+      @using (Html.BeginForm("DeleteEngineer", "Machines"))
+      {
+        
+          @Html.Hidden("MachineId", @join.MachineId)
+          @Html.Hidden("joinId", @join.MachineEngineerId)
+          <li><input type="submit" value="Remove" class="btn btn-warning btn-xs" /></li>
+        
+      }
+      </div>
     }
-  }
+  </div>
   </ul>
 }
 <br>
-<p>@Html.ActionLink("Edit Machine", "Edit", null, new { id = Model.MachineId } , new {@class="btn btn-success btn-sm"})</p>
-<p>@Html.ActionLink("Add a Engineer", "AddEngineer", "Machines", new { id = Model.MachineId } , new {@class="btn btn-success btn-sm"})</p>
-<p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId }, new {@class="btn btn-danger btn-sm"})</p>
-<p>@Html.ActionLink("Back to Machines", "Index", null, null, new {@class="btn btn-primary btn-sm"})</p>
+<div class="row">
+  <div class="col-md-1">
+    <p>@Html.ActionLink("Edit Machine", "Edit", null, new { id = Model.MachineId } , new {@class="btn btn-success btn-sm"})</p>
+  </div>
+  <div class="col-md-2">
+    <p>@Html.ActionLink("Add a Engineer", "AddEngineer", "Machines", new { id = Model.MachineId } , new {@class="btn btn-success btn-sm"})</p>
+  </div>
+  <div class="col-md-1">
+    <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId }, new {@class="btn btn-danger btn-sm"})</p>
+    </div>
+</div>
+@* <p>@Html.ActionLink("Back to Machines", "Index", null, null, new {@class="btn btn-primary btn-sm"})</p> *@

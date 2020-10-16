@@ -1,8 +1,7 @@
-@{
+@* @{
   Layout = "_Layout";
 }
-@model Factory.Models.Machine;
-@* @using Factory.Models; *@
+@model Factory.Models.FactoryContext;
 
 <div style="background:transparent !important" class="jumbotron">
 <h2>Welcome Factory Foreman</h2><hr>
@@ -12,7 +11,7 @@
 <h5>@Html.ActionLink("See All Engineers", "Index", "Engineers")</h5>
 <h5>@Html.ActionLink("See All Machines", "Index", "Machines")</h5>
 
-@if (Model.Engineers.Count == 0)
+@if (@Model.Engineers.Count == 0)
 {
   <p>No Engineers have been added yet!</p>
 }
@@ -23,14 +22,14 @@
 <br>
 <p>@Html.ActionLink("Add New Engineer", "Create", "Engineers", null, new {@class="btn btn-light btn-sm"})</p>
 
-@* @if (Model.Count == 0)
+@if (Model.Count == 0)
 {
   <p>No machines have been added yet!</p>
 }
 @foreach (var join in Model)
 {
   <li>@Html.ActionLink($"{join.Machine.MachineName}", "Details", new { id = join.Machine.MachineId}, new {@class="list-detail"}) </li>
-} *@
+}
 <br>
 <p>@Html.ActionLink("Add New Machine", "Create", "Machines", null, new {@class="btn btn-light btn-sm"})</p>
-
+ *@

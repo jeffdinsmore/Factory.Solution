@@ -16,7 +16,10 @@
     <br>
     @Html.TextBoxFor(model => model.MachineDescription, new {@required="required"})
     <br><br>
-    
+    @Html.Label("Install Date:")
+    <br>
+    @Html.TextBoxFor(model => model.MachineInstallDate, new {@required="required"})
+    <br><br>
     
     @* @Html.Label("Select Mission")
     @Html.DropDownList("MissionId") *@
