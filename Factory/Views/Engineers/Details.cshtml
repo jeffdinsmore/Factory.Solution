@@ -4,34 +4,38 @@
 @model Factory.Models.Engineer;
 <h1>Engineer details</h1>
 <br>
+<div class="row">
+  <div class="col-md-4">
+    <h5><strong>@Html.DisplayName("Name"):</strong> @Html.DisplayFor(model => model.EngineerName)</h5>
 
-<h5><strong>@Html.DisplayName("Name"):</strong> @Html.DisplayFor(model => model.EngineerName)</h5>
+    <h5><strong>@Html.DisplayName("Phone Number"):</strong> @Html.DisplayFor(model => model.EngineerPhoneNumber)</h5>
 
-<h5><strong>@Html.DisplayName("Phone Number"):</strong> @Html.DisplayFor(model => model.EngineerPhoneNumber)</h5>
-
-<h5><strong>@Html.DisplayName("Hire Date"):</strong> @Html.DisplayFor(model => model.EngineerHireDate)</h5>
-<br>
-
-@if(Model.Machines.Count == 0)
-{
-  <p>This engineer does not have any machines currently assigned.</p>
-}
-else
-{
-  <h5>Machines for this engineer:</h5>
-  <ul>
-  @foreach(var join in Model.Machines)
-  {
-    <li>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</li>
-    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+    <h5><strong>@Html.DisplayName("Hire Date"):</strong> @Html.DisplayFor(model => model.EngineerHireDate)</h5>
+    <br>
+  </div>
+  <div class="col-md-3">
+    @if(Model.Machines.Count == 0)
     {
-      @Html.Hidden("engineerId", @join.EngineerId)
-      @Html.Hidden("joinId", @join.MachineEngineerId)
-      <input type="submit" value="Remove" class="btn btn-warning btn-xs" />
+      <p>This engineer does not have any machines currently assigned.</p>
     }
-  }
-  </ul>
-}
+    else
+    {
+      <h5>Machines for this engineer:</h5>
+      <ul>
+      @foreach(var join in Model.Machines)
+      {
+        <li>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</li>
+        @using (Html.BeginForm("DeleteMachine", "Engineers"))
+        {
+          @Html.Hidden("engineerId", @join.EngineerId)
+          @Html.Hidden("joinId", @join.MachineEngineerId)
+          <input type="submit" value="Remove" class="btn btn-warning btn-xs" />
+        }
+      }
+      </ul>
+    }
+  </div>
+</div>
 <br>
 <p>@Html.ActionLink("Edit Engineer", "Edit", null, new { id = Model.EngineerId } , new {@class="btn btn-success btn-sm"})</p>
 <p>@Html.ActionLink("Add a Machine", "AddMachine", "Engineers", new { id = Model.EngineerId } , new {@class="btn btn-success btn-sm"})</p>

@@ -16,16 +16,9 @@
     <br>
     @Html.TextBoxFor(model => model.EngineerPhoneNumber, new {@required="required"})
     <br><br>
-    @Html.Label("Hire Date")
+    @Html.Label("Hire Date:")
     <br>
     @Html.TextBoxFor(model => model.EngineerHireDate, new {@required="required"})
-    <br><br>
-    
-    @* @Html.Label("Select Mission")
-    @Html.DropDownList("MissionId") *@
-    
-    @* @Html.Label("Select Ship")
-    @Html.DropDownList("ShipId") *@
 
     <br><br>
     <input type="submit" value="Add New Engineer" class="btn btn-success btn-sm" />

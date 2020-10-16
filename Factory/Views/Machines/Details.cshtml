@@ -25,19 +25,18 @@ else
     @foreach(var join in Model.Engineers)
     {
       <div class="col-sm-2">
-        <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</li>
+        <li class="joinLine">@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</li>
       </div>
       
-      <div class="col-ms-2">
       @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
         
           @Html.Hidden("MachineId", @join.MachineId)
           @Html.Hidden("joinId", @join.MachineEngineerId)
-          <li><input type="submit" value="Remove" class="btn btn-warning btn-xs" /></li>
+          <li class="joinLine"><input type="submit" value="Remove" class="btn btn-warning btn-xs" /></li>
         
       }
-      </div>
+      
     }
   </div>
   </ul>

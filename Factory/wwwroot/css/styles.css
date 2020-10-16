@@ -7,6 +7,13 @@ img.hero {
 li {
   list-style-type: none;
 }
+li.joinLine {
+  padding: 5px 0px 5px 0px;
+}
+.btn-xs {
+  margin: 0px 0px 1px 14px;
+}
+
 div.jumbotron {
   background-color: rgb(186, 224, 213)
 }
