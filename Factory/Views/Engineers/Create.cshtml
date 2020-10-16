@@ -8,20 +8,20 @@
 
 @using (Html.BeginForm())
 {
-    @Html.Label("Engineer Name:")
-    <br>
-    @Html.TextBoxFor(model => model.EngineerName, new {@required="required"})
-    <br><br>
-    @Html.Label("Phone Number:")
-    <br>
-    @Html.TextBoxFor(model => model.EngineerPhoneNumber, new {@required="required"})
-    <br><br>
-    @Html.Label("Hire Date:")
-    <br>
-    @Html.TextBoxFor(model => model.EngineerHireDate, new {@required="required"})
+  @Html.Label("Engineer Name:")
+  <br>
+  @Html.TextBoxFor(model => model.EngineerName, new {@required="required"})
+  <br><br>
+  @Html.Label("Phone Number:")
+  <br>
+  @Html.TextBoxFor(model => model.EngineerPhoneNumber, new {@required="required"})
+  <br><br>
+  @Html.Label("Hire Date:")
+  <br>
+  @Html.TextBoxFor(model => model.EngineerHireDate, new {@required="required"})
 
-    <br><br>
-    <input type="submit" value="Add New Engineer" class="btn btn-success btn-sm" />
+  <br><br>
+  <input type="submit" value="Add New Engineer" class="btn btn-success btn-sm" />
 }
 <br>
 <p>@Html.ActionLink("Cancel", "Index", null, null, new {@class="btn btn-primary btn-sm"})</p>

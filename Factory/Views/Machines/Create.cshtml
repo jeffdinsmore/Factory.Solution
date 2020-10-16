@@ -8,20 +8,20 @@
 
 @using (Html.BeginForm())
 {
-    @Html.Label("Machine Name:")
-    <br>
-    @Html.TextBoxFor(model => model.MachineName, new {@required="required"})
-    <br><br>
-    @Html.Label("Description:")
-    <br>
-    @Html.TextBoxFor(model => model.MachineDescription, new {@required="required"})
-    <br><br>
-    @Html.Label("Install Date:")
-    <br>
-    @Html.TextBoxFor(model => model.MachineInstallDate, new {@required="required"})
-    <br><br>
-    
-    <input type="submit" value="Add New Machine" class="btn btn-success btn-sm" />
+  @Html.Label("Machine Name:")
+  <br>
+  @Html.TextBoxFor(model => model.MachineName, new {@required="required"})
+  <br><br>
+  @Html.Label("Description:")
+  <br>
+  @Html.TextBoxFor(model => model.MachineDescription, new {@required="required"})
+  <br><br>
+  @Html.Label("Install Date:")
+  <br>
+  @Html.TextBoxFor(model => model.MachineInstallDate, new {@required="required"})
+  <br><br>
+  
+  <input type="submit" value="Add New Machine" class="btn btn-success btn-sm" />
 }
 <br>
 <p>@Html.ActionLink("Cancel", "Index", null, null, new {@class="btn btn-primary btn-sm"})</p>

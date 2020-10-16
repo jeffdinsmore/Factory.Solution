@@ -26,11 +26,11 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Index(Machine machine, int EngineerId)
     {
-      if (EngineerId != 0)
-      {
-      _db.MachineEngineer.Add(new MachineEngineer() { EngineerId = EngineerId, MachineId = machine.MachineId });
-      }
-      _db.SaveChanges();
+      // if (EngineerId != 0)
+      // {
+      // _db.MachineEngineer.Add(new MachineEngineer() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      // }
+      // _db.SaveChanges();
       return RedirectToAction("Details", "Engineer", new { id = machine.MachineId});
     }
   }
