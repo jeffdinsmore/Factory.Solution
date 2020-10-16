@@ -19,12 +19,7 @@ namespace Factory.Controllers
     public ActionResult Index()
     {
       List<Engineer> model = _db.Engineers.ToList();
-      var thisEngineer = _db.Engineers
-        .Include(engineer => engineer.Machines)
-        .ThenInclude(join => join.Machine)
-        // .FirstOrDefault(engineer => engineer.EngineerId == id);
-      // return View(thisEngineer);
-      return View(model, thisEngineer);
+      return View(model);
     }
   }
 }
