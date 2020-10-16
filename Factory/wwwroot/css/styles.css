@@ -1,23 +1,198 @@
-img {
-  width: 640px;
-  margin: 20px;
-  border: 10px solid gray;
+img.hero {
+  width: 100%;
+  margin: 0px;
+  border: 6px solid gray;
   border-radius: 10px;
 }
-div#header {
-  height: 50px;
-}
-
 li {
   list-style-type: none;
 }
+div.jumbotron {
+  background-color: rgb(186, 224, 213)
+}
+div#header {
+  height: 70px;
+  background-color: rgb(0, 143, 100);
+  left: 0px;
+  right: 0px;
+  width: 100%;
+}
+ul#headerUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 13%;
+  overflow: hidden;
+}
+li#headerLiLeft {
+  float: left;
+  margin-top: 11px;
+  margin-left: 14%;
+}
+li#headerLiLeft a {
+  display: block;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: white;
+  font-family: Lobster;
+  font-size: 24px;
+  font-style: italic;
+}
+li#headerLiLeft a:hover {
+  color: rgb(219, 219, 219)
+}
 
+li#headerLi {
+  float: right;
+  margin-top: 18px;
+}
+li#headerLi a {
+  display: block;
+  text-align: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+li#headerLi a:hover {
+  background-color: rgb(0, 83, 58)
+}
 div#footer {
   position:fixed;
   bottom:0px;
   left:0px;
   width:100%;
-  color:#CCC;
-  background:#333;
+  background-color: rgb(0, 112, 79);
   padding:10px;
+  height: 60px;
 }
+ul#footerUl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li#footerLi {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 11%;
+}
+div.spacer {
+  height: 10px;
+}
+
+#Name {
+  margin: 5px;
+}
+#PhoneNumber {
+  margin: 5px 5px 5px 17px;
+}
+#Address {
+  margin: 5px 5px 5px 15.3px;
+}
+#Email {
+  margin: 5px 5px 5px 33px;
+}
+#StylingNotes {
+  margin: 5px 5px 5px 24px;
+}
+#ExpertiseNotes {
+  margin: 5px 5px 5px 8px;
+}
+#HireDate {
+  margin: 5px 5px 5px 10px;
+}
+#StylistId {
+  margin: 5px 5px 5px 33px;
+  height: 30px;
+}
+#ClientId {
+  margin: 5px;
+}
+.tableClient {
+  width: 100%
+}
+th.name {
+  width: 14%;
+}
+th.phone {
+  width: 12%;
+}
+th.address {
+  width: 28%;
+}
+th.email {
+  width: 20%;
+}
+th.styling {
+  width: 26%
+}
+
+
+/*--- Media Queries ---*/
+@media screen and (max-width: 840px) {
+  li#headerLiLeft {
+    margin-top: 11px;
+    margin-left: 5%;
+  }
+  ul#headerUl {
+    margin: 0;
+    margin-right: 5%;
+  }
+  li#footerLi {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 4%;
+  }
+  
+
+}
+
+@media screen and (max-width: 760px) {
+  li#headerLiLeft {
+    margin-top: 11px;
+    margin-left: 5%;
+  }
+  ul#headerUl {
+    margin: 0;
+    margin-right: 5%;
+  }
+}
+
+
+@media screen and (max-width: 580px) {
+  li#headerLiLeft {
+    margin-top: 11px;
+    margin-left: 0%;
+  }
+  ul#headerUl {
+    margin: 0;
+    margin-right: 4%;
+  }
+  li#headerLi {
+    margin-top: 20px;
+  }
+  li#headerLi a {
+    padding: 15px 16px;
+    font-size: 14px;
+  }
+  li#footerLi {
+    padding: 0px 20px;
+    font-size: 14px;
+    margin-left: 4%;
+  }
+}
+
+@media screen and (max-width: 312px) {
+  li#headerLiLeft {
+    margin-top: 11px;
+    margin-left: 0%;
+  }
+}
+

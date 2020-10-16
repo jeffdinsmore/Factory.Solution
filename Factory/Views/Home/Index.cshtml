@@ -1,71 +1,10 @@
 @{
   Layout = "_Layout";
 }
-@using Factory.Models;
-
-
-
-@if (@Model.Count == 0)
-{
-  <p>No engineers have been added yet!</p>
-}
-@foreach (Engineer engineer in Model)
-{
-  <li>@Html.ActionLink($"{engineer.EngineerName}", "Details", "Engineers", new { id = engineer.EngineerId}, new {@class="list-detail"}) </li>
-}
-<br>
-<p>@Html.ActionLink("Add New Engineer", "Create", "Engineers", null, new {@class="btn btn-success btn-sm"})</p>
-
-@if(@Model.Count == 0)
-{
-  <p>This engineer does not have any machines currently assigned.</p>
-}
-else
-{
-  @* @foreach (MachineEngineer machine in Model)
-{
-  <li>@Html.ActionLink($"{machine.MachineId}", "Details", "Engineers", new { id = machine.MachineId}, new {@class="list-detail"}) </li>
-} *@
-}
-
-
-
-@* <br>
-<p>@Html.ActionLink("Add New Engineer", "Create", null, null, new {@class="btn btn-success btn-sm"})</p> *@
-
-
-@* @{
+@{
   Layout = "_Layout";
 }
-@model Factory.Models.FactoryContext;
-
-<div style="background:transparent !important" class="jumbotron">
-<h2>Welcome Factory Foreman</h2><hr>
-<p>
-<div>
-
-<h5>@Html.ActionLink("See All Engineers", "Index", "Engineers")</h5>
-<h5>@Html.ActionLink("See All Machines", "Index", "Machines")</h5>
-
-@if (@Model.Engineers.Count == 0)
-{
-  <p>No Engineers have been added yet!</p>
-}
-@foreach (var join in Model.Engineers)
-{
-  <li>@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", new { id = join.Engineer.EngineerId}, new {@class="list-detail"}) </li>
-}
 <br>
-<p>@Html.ActionLink("Add New Engineer", "Create", "Engineers", null, new {@class="btn btn-light btn-sm"})</p>
-
-@if (Model.Count == 0)
-{
-  <p>No machines have been added yet!</p>
-}
-@foreach (var join in Model)
-{
-  <li>@Html.ActionLink($"{join.Machine.MachineName}", "Details", new { id = join.Machine.MachineId}, new {@class="list-detail"}) </li>
-}
-<br>
-<p>@Html.ActionLink("Add New Machine", "Create", "Machines", null, new {@class="btn btn-light btn-sm"})</p>
- *@
+<div class="jumbotron">
+  <h2>Welcome To Dr. Sillystringz's Factory Database</h2>
+</div>
