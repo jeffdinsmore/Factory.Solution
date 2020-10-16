@@ -1,10 +1,23 @@
 @{
   Layout = "_Layout";
 }
-@{
-  Layout = "_Layout";
-}
+@using Factory.Models;
 <br>
 <div class="jumbotron">
   <h1>Welcome To Dr. Sillystringz's Factory Database</h1>
 </div>
+<div class="col-md-4">
+@using (Html.BeginForm())
+{
+  
+  @Html.Label("List of Engineers")
+  @Html.DropDownList("EngineerId")
+  <input type="submit" value="Go" class="btn btn-success btn-sm" />
+}
+</div>
+
+<div class="col-md-5">
+@Html.Label("List of Machines")
+@Html.DropDownList("MachineId")
+</div>
+
