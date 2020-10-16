@@ -18,7 +18,7 @@
 }
 else
 {
-  <h5>Engineers that work on this machine:</h5>
+  <h4><strong>Engineers that work on this machine:</strong></h4>
   <ul>
   <div class="row">
     
@@ -27,16 +27,12 @@ else
       <div class="col-sm-2">
         <li class="joinLine">@Html.ActionLink($"{join.Engineer.EngineerName}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</li>
       </div>
-      
       @using (Html.BeginForm("DeleteEngineer", "Machines"))
       {
-        
-          @Html.Hidden("MachineId", @join.MachineId)
-          @Html.Hidden("joinId", @join.MachineEngineerId)
-          <li class="joinLine"><input type="submit" value="Remove" class="btn btn-warning btn-xs" /></li>
-        
+        @Html.Hidden("MachineId", @join.MachineId)
+        @Html.Hidden("joinId", @join.MachineEngineerId)
+        <li class="joinLine"><input type="submit" value="Remove" class="btn btn-warning btn-xs" /></li>
       }
-      
     }
   </div>
   </ul>
@@ -49,7 +45,7 @@ else
   <div class="col-md-2">
     <p>@Html.ActionLink("Add a Engineer", "AddEngineer", "Machines", new { id = Model.MachineId } , new {@class="btn btn-success btn-sm"})</p>
   </div>
-  <div class="col-md-1">
+  <div class="col-md-2">
     <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId }, new {@class="btn btn-danger btn-sm"})</p>
     </div>
 </div>
