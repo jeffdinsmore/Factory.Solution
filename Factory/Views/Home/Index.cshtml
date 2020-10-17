@@ -1,25 +1,28 @@
 @{
   Layout = "_Layout";
 }
-@using Factory.Models;
-@model Factory.Models.Engineer
+
 <br>
 <div class="jumbotron">
-  <h1>Welcome To Dr. Sillystringz's Factory Database</h1>
+  <h2>Welcome To Dr. Sillystringz's Factory Database</h2>
 </div>
-<div class="col-md-4">
+<div class="col-md-5">
   <br>
-  @using (Html.BeginForm())
-  {
-    @* @Html.HiddenFor(model => model.EngineerId) *@
-    @Html.Label("List of Engineers")
-    @Html.DropDownList("EngineerId")
-    @* <input type="submit" value="Go" class="btn btn-success btn-sm" /> *@
-  }
+  <ul>
+    <h3>List of Engineers:</h3>
+    @foreach (var engineer in ViewBag.Eng)
+    {
+      <li>@engineer.EngineerName</li>
+    }
+  </ul>
 </div>
 <br>
 <div class="col-md-5">
-  @Html.Label("List of Machines")
-  @Html.DropDownList("MachineId")
+  <ul>
+    <h3>List of Machines:</h3>
+    @foreach (var machine in ViewBag.Mach)
+    {
+      <li>@machine.MachineName</li>
+    }
+  </ul>
 </div>
-

@@ -17,10 +17,12 @@ namespace Factory.Controllers
     }
     public ActionResult Index()
     {
-      ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "EngineerName");
-      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName");
       List<Engineer> model = _db.Engineers.ToList();
       List<Machine> model2 = _db.Machines.ToList();
+      ViewBag.Eng = model;
+      ViewBag.Mach = model2;
+      // List<Engineer> model = _db.Engineers.ToList();
+      // List<Machine> model2 = _db.Machines.ToList();
       return View();
     }
     [HttpPost]
