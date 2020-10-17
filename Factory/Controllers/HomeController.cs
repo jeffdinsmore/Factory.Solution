@@ -17,23 +17,11 @@ namespace Factory.Controllers
     }
     public ActionResult Index()
     {
-      List<Engineer> model = _db.Engineers.ToList();
-      List<Machine> model2 = _db.Machines.ToList();
-      ViewBag.Eng = model;
-      ViewBag.Mach = model2;
-      // List<Engineer> model = _db.Engineers.ToList();
-      // List<Machine> model2 = _db.Machines.ToList();
+      List<Engineer> modelEng = _db.Engineers.ToList();
+      List<Machine> modelMach = _db.Machines.ToList();
+      ViewBag.Eng = modelEng;
+      ViewBag.Mach = modelMach;
       return View();
-    }
-    [HttpPost]
-    public ActionResult Index(Machine machine, int EngineerId)
-    {
-      // if (EngineerId != 0)
-      // {
-      // _db.MachineEngineer.Add(new MachineEngineer() { EngineerId = EngineerId, MachineId = machine.MachineId });
-      // }
-      // _db.SaveChanges();
-      return RedirectToAction("Details", "Engineer", new { id = machine.MachineId});
     }
   }
 }
